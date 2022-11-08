@@ -50,7 +50,6 @@ window.addEventListener("scroll", scrollUp);
 
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
 const sections = document.querySelectorAll("section[id]");
 
 const scrollActive = () => {
@@ -75,9 +74,11 @@ window.addEventListener('scroll', scrollActive);
 
 /*=============== DARK LIGHT THEME ===============*/
 
+
+//Them change button
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
-const iconTheme = "ri-sun-line";
+const iconTheme = "ri-sun-line";  //ri-sun-line: name is icon
 
 //Previous selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme');
@@ -90,6 +91,7 @@ const getCurrentIcon = () =>
 
 //We valifate if the user previously chose a topic
 if (selectedTheme) {
+
     //If the validation is fulfilled, we ask the issue was to know if we activated
     document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme)
     themeButton.classList[selectedIcon === "ri-sun-line" ? "add" : "remove"](iconTheme);
@@ -111,8 +113,9 @@ const sr = ScrollReveal({
   origin: 'top',
   distance: '60px',
   duration: 2500,
+  mobile: true,
   delay: 400,
-  //reset:true, //Animations repeat
+  reset:true, //Animations repeat
 })
 sr.reveal(`.home__img, .newsletter__container, .footer__logo, 
            footer__description, .footer__content, .footer__info`)

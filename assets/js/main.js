@@ -3,6 +3,7 @@ const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
 const navClose = document.getElementById("nav-close");
 
+
 /*=============== MENU SHOW ===============*/
 if (navToggle) {
   navToggle.addEventListener("click", () => {
@@ -10,12 +11,14 @@ if (navToggle) {
   });
 }
 
+
 /*=============== MENU HIDDEN ===============*/
 if (navClose) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu");
   });
 }
+
 
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll(".nav__link");
@@ -27,10 +30,11 @@ const linkAction = () => {
 
 navLink.forEach((item) => item.addEventListener("click", linkAction));
 
-/*=============== CHANGE BACKGROUND HEADER ===============*/
 
+/*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
+  
   // When the scroll is reater than 50 viewport height,add the scroll-header class to the header tag
   this.scrollY >= 50
     ? header.classList.add("bg-header")
@@ -72,9 +76,8 @@ const scrollActive = () => {
 };
 window.addEventListener('scroll', scrollActive);
 
+
 /*=============== DARK LIGHT THEME ===============*/
-
-
 //Them change button
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
@@ -107,6 +110,7 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem("selected-icon", getCurrentIcon());
 })
+
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
